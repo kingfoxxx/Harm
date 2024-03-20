@@ -1,0 +1,80 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>Signup</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'login.css'%}">
+<script nonce="426dd4a1-3f80-465c-b08e-a312c255e9ce">(function(w,d){!function(j,k,l,m){j[l]=j[l]||{};j[l].executed=[];j.zaraz={deferred:[],listeners:[]};j.zaraz.q=[];j.zaraz._f=function(n){return async function(){var o=Array.prototype.slice.call(arguments);j.zaraz.q.push({m:n,a:o})}};for(const p of["track","set","debug"])j.zaraz[p]=j.zaraz._f(p);j.zaraz.init=()=>{var q=k.getElementsByTagName(m)[0],r=k.createElement(m),s=k.getElementsByTagName("title")[0];s&&(j[l].t=k.getElementsByTagName("title")[0].text);j[l].x=Math.random();j[l].w=j.screen.width;j[l].h=j.screen.height;j[l].j=j.innerHeight;j[l].e=j.innerWidth;j[l].l=j.location.href;j[l].r=k.referrer;j[l].k=j.screen.colorDepth;j[l].n=k.characterSet;j[l].o=(new Date).getTimezoneOffset();if(j.dataLayer)for(const w of Object.entries(Object.entries(dataLayer).reduce(((x,y)=>({...x[1],...y[1]})),{})))zaraz.set(w[0],w[1],{scope:"page"});j[l].q=[];for(;j.zaraz.q.length;){const z=j.zaraz.q.shift();j[l].q.push(z)}r.defer=!0;for(const A of[localStorage,sessionStorage])Object.keys(A||{}).filter((C=>C.startsWith("_zaraz_"))).forEach((B=>{try{j[l]["z_"+B.slice(7)]=JSON.parse(A.getItem(B))}catch{j[l]["z_"+B.slice(7)]=A.getItem(B)}}));r.referrerPolicy="origin";r.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(j[l])));q.parentNode.insertBefore(r,q)};["complete","interactive"].includes(k.readyState)?zaraz.init():j.addEventListener("DOMContentLoaded",zaraz.init)}(w,d,"zarazData","script");})(window,document);</script></head>
+<body>
+<section class="ftco-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
+<h2 class="heading-section">Register as a User </h2>
+</div>
+</div>
+<div class="row justify-content-center">
+<div class="col-md-12 col-lg-10">
+<div class="wrap d-md-flex">
+    <div class="img" style="background-image: url(../../static/images/7.jpg);">
+</div>
+<div class="login-wrap p-4 p-md-5">
+<div class="d-flex">
+<div class="w-100">
+<h3 class="mb-4">Sign Up</h3>
+</div>
+<div class="w-100">
+<p class="social-media d-flex justify-content-end">
+<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+</p>
+</div>
+</div>
+<form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+    <div class="form-group mb-3">
+        <label class="label" for="email">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Email" required>
+    </div>
+
+    <div class="form-group mb-3">
+        <label class="label" for="username">Username</label>
+        <input type="text" class="form-control" name="username" placeholder="Username" required>
+    </div>
+
+    <div class="form-group mb-3">
+        <label class="label" for="password">Password</label>
+        <input type="password" class="form-control" name="password" placeholder="Password" required>
+    </div>
+
+    <!-- <div class="form-group mb-3">
+        <label class="label" for="confirm_password">Confirm Password</label>
+        <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required>
+    </div> -->
+
+    <div class="form-group">
+        <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign Up</button>
+    </div>
+</form>
+
+
+
+<p class="text-center">Already a member? <a data-toggle="tab" href="login">Login</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"8294e965b82c655c","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}' crossorigin="anonymous"></script>
+</body>
+</html>
